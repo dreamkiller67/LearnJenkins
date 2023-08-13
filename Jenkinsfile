@@ -1,14 +1,14 @@
 pipeline{
-		agent any
+		agent {docker { image 'maven:3.9.3-eclipse-temurin-17-alpine' }}
 				stages{
 				       stage('one'){
 								steps{
 									echo 'welcome to jenkins baba'
 								}
 					   }
-					   stage('two'){
+					   stage('build'){
 								steps{
-								input('Proceed..?')
+								sh 'mvn --version'
 								}
 					   }
 				}
