@@ -1,7 +1,7 @@
 pipeline{
 		agent {label 'master'}
 
-	figlet{ Welcomw to Jenkins }
+
 				stages{
 				       stage('one'){
 								steps{
