@@ -1,10 +1,10 @@
 pipeline{
 		agent {label 'master'}
-
-		figlet('WElcome to MAster')
+	
 				stages{
 				       stage('one'){
 								steps{
+									figlet "Welcome to Jenkins"
 									echo 'welcome to jenkins baba'
 								}
 					   }
