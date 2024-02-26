@@ -1,17 +1,10 @@
-pipeline{
-		agent {label 'master'}
-	
-				stages{
-				       stage('one'){
-								steps{
-									figlet "Welcome to Jenkins"
-									echo 'welcome to jenkins baba'
-								}
-					   }
-					   stage('build'){
-								steps{
-								echo 'building info' 
-								}
-					   }
-				}
+pipeline {
+    agent any
+    stages {
+        stage('Build') { 
+            steps {
+                sh 'mvn -B -DskipTests clean package' 
+            }
+        }
+    }
 }
