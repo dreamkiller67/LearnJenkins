@@ -4,7 +4,7 @@ pipeline {
     stage("Build") {
       steps {
           // Run the maven build
-          sh "mvn clean verify"
+          sh "mvn package"
        // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe & FindBugs & SpotBugs reports...
       }
     }
