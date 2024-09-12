@@ -2,10 +2,10 @@ pipeline {
     agent any
     environment {
         // Define environment variables
-        IMAGE_NAME = 'cloudsihmar/pet-web'
-        PORT_MAPPING = '9090:8080'
-        CONTAINER_NAME = 'pet'
-        TAG = "${BUILD_NUMBER}"
+      //  IMAGE_NAME = 'cloudsihmar/pet-web'
+        //PORT_MAPPING = '9090:8080'
+       // CONTAINER_NAME = 'pet'
+        //TAG = "${BUILD_NUMBER}"
     }
 
     stages {
