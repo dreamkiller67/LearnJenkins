@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('git-clone') {
             steps {
-                git 'https://github.com/dreamkiller67/RestApp.git'
+                git clone 'https://github.com/dreamkiller67/RestApp.git'
             }
         }
         
@@ -22,7 +22,7 @@ pipeline {
         
         stage('image-creation') {
             steps {
-                sh 'docker build -t $IMAGE_NAME:${BUILD_NUMBER} -f Dockerfile.v3 .'
+                sh 'docker build -t $IMAGE_NAME:${BUILD_NUMBER} -f Dockerfile .'
             }
         }
         
