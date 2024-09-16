@@ -2,15 +2,15 @@ pipeline {
     agent any
     environment {
         // Define environment variables
-        IMAGE_NAME = 'cloudsihmar/pet-web'
+        IMAGE_NAME = 'ajay/rest'
         PORT_MAPPING = '9090:8080'
-        CONTAINER_NAME = 'pet'
+        CONTAINER_NAME = 'ajay'
         TAG = "${BUILD_NUMBER}"
     }
     stages {
         stage('git-clone') {
             steps {
-                git 'https://github.com/CloudSihmar/pet.git'
+                git 'https://github.com/dreamkiller67/RestApp.git'
             }
         }
         
