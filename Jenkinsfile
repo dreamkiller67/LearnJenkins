@@ -28,8 +28,6 @@ pipeline {
         
         stage('image-upload') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'password', usernameVariable: 'username')]) {
-                sh "docker login -u ${username} -p ${password}"
                 sh "docker push $IMAGE_NAME:${BUILD_NUMBER}"
   
                 }
