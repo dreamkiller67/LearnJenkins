@@ -13,6 +13,13 @@ pipeline {
                 sh 'git clone https://github.com/dreamkiller67/RestApp.git'
             }
         }
+        stage('Setup') {
+    steps {
+        dir ('RestApp') {
+            deleteDir()
+        }
+    }
+}
         
         stage('mvn-package') {
             steps {
