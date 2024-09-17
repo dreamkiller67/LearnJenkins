@@ -29,6 +29,7 @@ pipeline {
         
         stage('image-creation') {
             steps {
+                sh 'docker pull dasnarayanb2/restapp'
                 sh 'docker build -t $IMAGE_NAME:${BUILD_NUMBER} -f Dockerfile .'
             }
         }
