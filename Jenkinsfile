@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         // Define environment variables
-        IMAGE_NAME = 'ajay/rest'
+        IMAGE_NAME = 'dasnarayanb2/restapp'
         PORT_MAPPING = '9090:8080'
         CONTAINER_NAME = 'ajay'
         TAG = "${BUILD_NUMBER}"
@@ -28,6 +28,8 @@ pipeline {
         
         stage('image-upload') {
             steps {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'password', usernameVariable: 'username')]) {
+                sh "docker login -u ${username} -p ${password}"
                 sh "docker push $IMAGE_NAME:${BUILD_NUMBER}"
   
                 }
