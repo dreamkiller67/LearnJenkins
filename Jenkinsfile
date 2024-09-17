@@ -12,7 +12,7 @@ pipeline {
             
         stage('git-clone') {
             steps {
-                sh 'git clone 'https://github.com/dreamkiller67/RestApp.git'
+                sh 'git clone https://github.com/dreamkiller67/RestApp.git'
             }
         }
  
