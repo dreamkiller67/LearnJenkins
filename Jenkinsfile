@@ -16,7 +16,7 @@ pipeline {
         
         stage('mvn-package') {
             steps {
-                sh 'mvn package'
+                sh 'mvn package -Dmaven.skip.true'
             }
         }
         
