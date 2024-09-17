@@ -7,19 +7,19 @@ pipeline {
         CONTAINER_NAME = 'ajay'
         TAG = "${BUILD_NUMBER}"
     }
+    
     stages {
+               stage('Setup') {
+    steps {
+         sh 'rm -rf RestApp'
+        }
+    }
         stage('git-clone') {
             steps {
                 sh 'git clone https://github.com/dreamkiller67/RestApp.git'
             }
         }
-        stage('Setup') {
-    steps {
-        dir ('RestApp') {
-            deleteDir()
-        }
-    }
-}
+ 
         
         stage('mvn-package') {
             steps {
