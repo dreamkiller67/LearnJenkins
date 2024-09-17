@@ -23,7 +23,7 @@ pipeline {
         
         stage('mvn-package') {
             steps {
-                sh 'mvn package -Dmaven.skip.true'
+                sh 'cd /var/lib/jenkins/workspace/HelloDevOps/RestApp mvn package'
             }
         }
         
