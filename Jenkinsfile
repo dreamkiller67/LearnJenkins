@@ -9,11 +9,7 @@ pipeline {
     }
     
     stages {
-               stage('Setup') {
-    steps {
-         sh 'rm -rf RestApp'
-        }
-    }
+            
         stage('git-clone') {
             steps {
                 sh 'git clone https://github.com/dreamkiller67/RestApp.git'
