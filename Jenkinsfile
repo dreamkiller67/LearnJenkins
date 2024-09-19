@@ -9,6 +9,12 @@ pipeline {
     }
     
     stages {
+
+        stage(clean-up){
+            steps{
+                sh '-rm -rf RestApp'
+            }
+        }
         
         stage('git-clone') {
             steps {
