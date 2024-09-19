@@ -35,14 +35,6 @@ pipeline {
             }
         }
         
-        stage('image-upload') {
-            steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'password', usernameVariable: 'username')]) {
-                sh "docker login -u ${username} -p ${password}"
-                sh "docker push $IMAGE_NAME:${BUILD_NUMBER}"
-                }
-                }
-        }
         
         // Deploy stage starts here
         stage('Deploy') {
@@ -53,7 +45,7 @@ pipeline {
                          docker stop $CONTAINER_NAME
                          docker rm $CONTAINER_NAME
                    fi'''
-                sh 'docker run -d -p 9090:8080 --name $CONTAINER_NAME $IMAGE_NAME:${BUILD_NUMBER}'
+                sh 'docker run -d -p 9090:8080 --name $CONTAINER_NAME dasnarayanb2/restapp'
             }
         }
      // Deploy stage ends here
