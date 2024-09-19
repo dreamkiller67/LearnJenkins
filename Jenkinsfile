@@ -45,7 +45,7 @@ pipeline {
                          docker stop $CONTAINER_NAME
                          docker rm $CONTAINER_NAME
                    fi'''
-                sh 'docker run -d -p 9090:8080 --name $CONTAINER_NAME dasnarayanb2/restapp'
+                sh 'docker run -d -p 9090:8181 --name $CONTAINER_NAME dasnarayanb2/restapp'
             }
         }
      // Deploy stage ends here
