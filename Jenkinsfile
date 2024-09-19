@@ -12,7 +12,7 @@ pipeline {
 
         stage('clean-up'){
             steps{
-                sh '-rm -rf RestApp'
+                sh 'rm -rf RestApp'
             }
         }
         
