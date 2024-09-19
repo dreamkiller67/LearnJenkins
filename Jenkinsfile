@@ -20,7 +20,6 @@ pipeline {
         stage('mvn-package') {
             steps {
                sh 'mvn package'
-              // sh 'mvn install:install-file "-Dfile=app.jar" "-DgroupId=com.restapp" "-DartifactId=restapp" "-Dversion=0.0.1-SNAPSHOT" "-Dpackaging=jar" "-DgeneratePom=true"'
             }
         }
         
