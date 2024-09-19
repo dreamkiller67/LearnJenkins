@@ -31,7 +31,7 @@ pipeline {
         
         stage('image-creation') {
             steps {
-                sh 'docker build -t $IMAGE_NAME -f Dockerfile .'
+                sh 'cd /var/lib/jenkins/workspace/HelloDevOps/RestApp && docker build -t $IMAGE_NAME -f Dockerfile .'
             }
         }
         
