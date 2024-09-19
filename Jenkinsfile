@@ -3,7 +3,7 @@ pipeline {
     environment {
         // Define environment variables
         IMAGE_NAME = 'dasnarayanb2/restapp'
-        PORT_MAPPING = '9090:8080'
+        PORT_MAPPING = '9090:8181'
         CONTAINER_NAME = 'ajay'
         TAG = "${BUILD_NUMBER}"
     }
