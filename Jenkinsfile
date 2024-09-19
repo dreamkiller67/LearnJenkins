@@ -10,7 +10,7 @@ pipeline {
     
     stages {
 
-        stage(clean-up){
+        stage('clean-up'){
             steps{
                 sh 'rm -rf RestApp'
             }
