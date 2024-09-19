@@ -25,8 +25,7 @@ pipeline {
         
         stage('mvn-package') {
             steps {
-               sh 'cd /var/lib/jenkins/workspace/HelloDevOps/RestApp'
-               sh 'mvn package'
+               sh 'cd /var/lib/jenkins/workspace/HelloDevOps/RestApp && mvn package'
             }
         }
         
