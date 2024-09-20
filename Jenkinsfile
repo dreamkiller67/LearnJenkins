@@ -3,7 +3,7 @@ pipeline {
     environment {
         // Define environment variables
         IMAGE_NAME = 'dasnarayanb2/restapp'
-        PORT_MAPPING = '9090:8181'
+        PORT_MAPPING = '8181:8181'
         CONTAINER_NAME = 'ajay'
         TAG = "${BUILD_NUMBER}"
     }
@@ -45,7 +45,7 @@ pipeline {
                          docker stop $CONTAINER_NAME
                          docker rm $CONTAINER_NAME
                    fi'''
-                sh 'docker run -d -p 9090:8181 --name $CONTAINER_NAME dasnarayanb2/restapp'
+                sh 'docker run -d -p 8181:8181 --name $CONTAINER_NAME dasnarayanb2/restapp'
             }
         }
      // Deploy stage ends here
