@@ -40,7 +40,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 // Deploy the Docker image to your environment (e.g., Kubernetes, Docker Swarm)
-                sh '''if [ "$(docker ps -aq -f name=$CONTAINER_NAME)" ]; then
+                sudo sh'''if [ "$(docker ps -aq -f name=$CONTAINER_NAME)" ]; then
                          echo "Stopping and removing existing container..."
                          docker stop $CONTAINER_NAME
                          docker rm $CONTAINER_NAME
