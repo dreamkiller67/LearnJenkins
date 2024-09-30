@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         // Define environment variables
-        IMAGE_NAME = 'dasnarayanb2/restapp'
+        IMAGE_NAME = 'dasnarayanb2/myapp'
         PORT_MAPPING = '8181:8181'
         CONTAINER_NAME = 'ajay'
         TAG = "${BUILD_NUMBER}"
